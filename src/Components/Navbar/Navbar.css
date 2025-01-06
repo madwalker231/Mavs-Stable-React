@@ -34,6 +34,7 @@
     justify-content: center;
     gap: 3px;
     cursor: pointer;
+    color: #626262;
 }
 
 .nav-menu hr{
@@ -41,7 +42,7 @@
     width: 80%;
     height: 3px;
     border-radius: 10px;
-    background: #FF4141;
+    background: #0056B8;
 }
 
 .nav-login-cart{
@@ -77,6 +78,6 @@
     margin-left: -55px;
     border-radius: 11px;
     font-size: 14px;
-    background: red;
+    background: #0056B8;
     color: white;
 }
