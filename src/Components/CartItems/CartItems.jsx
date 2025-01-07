@@ -26,7 +26,12 @@ const CartItems = () => {
                         <p>${e.new_price}</p>
                         <button className="cartitems-quantity">{cartItems[e.id]}</button>
                         <p>${e.new_price*cartItems[e.id]}</p>
-                        <img className="cartitems-remove-icon" src={remove_icon} onClick={()=>{removeFromCart(e.id)}} alt="" />
+                        <img 
+                            className="cartitems-remove-icon" 
+                            src={remove_icon} 
+                            onClick={()=>{removeFromCart(e.id)}} 
+                            alt="" 
+                        />
                     </div>
                     <hr />
                 </div>
@@ -54,13 +59,6 @@ const CartItems = () => {
                         </div>
                     </div>
                     <button>Proceed To Checkout</button>
-                </div>
-                <div className="cartitems-promo-code">
-                    <p>If you have a promo code, Enter it here:</p>
-                    <div className="cartitems-promobox">
-                        <input type="text" placeholder="Promo Code" />
-                        <button>Submit</button>
-                    </div>
                 </div>
             </div>
         </div>
