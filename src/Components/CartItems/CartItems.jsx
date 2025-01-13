@@ -38,7 +38,6 @@ const CartItems = () => {
                 }
                 return null;
             })}
-            {/* Total price not working in cart page. Debugging needed. */}
             <div className="cartitems-down">
                 <div className="cartitems-total">
                     <h1>Cart Total</h1>
