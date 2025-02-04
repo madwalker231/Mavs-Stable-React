@@ -33,7 +33,7 @@ const upload = multer({storage:storage})
 
 // Upload endpoint
 app.use('/images',express.static('upload/images'))
-app.post("/upload", upload.single('product'),(req, res)=>{
+app.post("/upload", upload.single('product'),(req,res)=>{
     res.json({
         success:1,
         image_url:`http://localhost:${port}/images/${req.file.filename}`
@@ -42,7 +42,7 @@ app.post("/upload", upload.single('product'),(req, res)=>{
 
 // Schema for creating products
 
-const Products = mongoose.model("Product", {
+const Product = mongoose.model("Product", {
     id:{
         type: Number,
         required: true,
@@ -77,8 +77,8 @@ const Products = mongoose.model("Product", {
     }
 })
 
-app.post('/addproduct', async(req, res)=>{
-    let products = await Products.find({});
+app.post('/addproduct',async(req,res)=>{
+    let products = await Product.find({});
     let id;
     if (products.length>0){
         let last_product_array = products.slice(-1);
@@ -88,7 +88,7 @@ app.post('/addproduct', async(req, res)=>{
     else{
         id=1;
     }
-    const product = new Products({
+    const product = new Product({
         id:id,
         name:req.body.name,
         image:req.body.image,
@@ -118,7 +118,7 @@ app.post('/removeproduct',async (req,res)=>{
 });
 
 // API for getting products
-app.get('/allproducts', async (req,res)=>{
+app.get('/allproducts',async (req,res)=>{
     let products = await Products.find({});
     console.log("All products fetched");
     res.send(products);
