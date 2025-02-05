@@ -107,7 +107,7 @@ app.post('/addproduct',async(req,res)=>{
 
 // API for deleting products
 app.post('/removeproduct',async (req,res)=>{
-    await Products.findOneAndDelete({
+    await Product.findOneAndDelete({
         id:req.body.id
     });
     console.log("Removed");
@@ -119,7 +119,7 @@ app.post('/removeproduct',async (req,res)=>{
 
 // API for getting products
 app.get('/allproducts',async (req,res)=>{
-    let products = await Products.find({});
+    let products = await Product.find({});
     console.log("All products fetched");
     res.send(products);
 });
