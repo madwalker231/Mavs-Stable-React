@@ -30,46 +30,36 @@ const ListProduct = () =>{
     return(
         <div className="list-product">
             <h1>All Products List</h1>
-            <table>
-                <tr>
-                    <th>Products</th>
-                    <th>Title</th>
-                    <th>Old Price</th>
-                    <th>New Price</th>
-                    <th>Category</th>
-                    <th>Remove</th>
-                </tr>
-                <tr>
-                    {allproducts.map((product,index)=>{
-                        return <><div key={index} className="listproduct-format-main listproduct-format">
-                            <td>
-                                <img src={product.image} alt="" className="listproduct-product-icon" />
-                            </td>
-                        </div>
-                        <hr /></>
-                    })}
-                </tr>
-                <tr>
-                    {allproducts.map((product,index)=>{
-                        return <><div key={index} className="listproduct-format-main listproduct-format">
+            <table className="product-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Title</th>
+                        <th>Old Price</th>
+                        <th>New Price</th>
+                        <th>Category</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {allproducts.map((product, index) => (
+                        <tr key={index}>
+                            <td><img src={product.image} alt="Product" className="listproduct-product-icon"/></td>
                             <td>{product.name}</td>
-                        </div>
-                        <hr /></>
-                    })}
-                </tr>
-                <tr>
-                    {allproducts.map((product,index)=>{
-                        return <><div key={index} className="listproduct-format-main listproduct-format">
-                            <td>${product.old_price}</td>
-                        </div>
-                        <hr /></>
-                    })}
-                </tr>
-            </table>            
+                            <td>{product.old_price}</td>
+                            <td>{product.new_price}</td>
+                            <td>{product.category}</td>
+                            <td>
+                                <img onClick={() => remove_product(product.id)}
+                                src={cross_icon}
+                                alt="Remove Product"
+                                className="listproduct-remove-icon" />
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
-
-
-
         // <div className="list-product">
         //     <h1>All Products List</h1>
             
@@ -95,9 +85,8 @@ const ListProduct = () =>{
         //                 <hr /></>
         //             })}
         //         </div>
-            
         // </div>
-    )
-}
+    );
+};
 
 export default ListProduct
