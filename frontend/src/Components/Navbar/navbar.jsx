@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom'
 import { ShopContext } from '../../Context/ShopContext'
 import nav_dropdown from '../Assets/dropdown_icon.png'
 
+
+// Change Nav bar buttons to drop downs with subcategories.
+
 const Navbar = () => {
     const [menu,setMenu] = useState("shop");
     const {getTotalCartItems} = useContext(ShopContext);

@@ -3,6 +3,8 @@ import './Hero.css'
 import arrow_icon from '../Assets/arrow.png'
 import hero_image from '../Assets/dirk_hero_img.png'
 
+// Make inventory button direct user to full inventory screen. Display newest items first.
+
 const Hero = () => {
     return (
         <div className="hero">

@@ -12,9 +12,9 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Navbar/>
+        <Navbar/> {/* Display only after login/sign up completed. */}
         <Routes>
-          <Route path='/' element={<Shop/>}/>
+          <Route path='/' element={<Shop/>}/> {/* Display only after login/sign up completed */}
           <Route path='/men' element={<ShopCategory category="men"/>}/>
           <Route path='/women' element={<ShopCategory category="women"/>}/>
           <Route path='/kid' element={<ShopCategory category="kid"/>}/>
@@ -22,7 +22,7 @@ function App() {
             <Route path=':productId' element={<Product/>}/>
           </Route>
           <Route path='/cart' element={<Cart/>}/>
-          <Route path='/login' element={<LoginSignup/>}/>
+          <Route path='/login' element={<LoginSignup/>}/> {/* make first screen user sees */}
         </Routes>
         <Footer/>
       </BrowserRouter>
